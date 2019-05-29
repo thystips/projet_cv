@@ -24,16 +24,16 @@ $(document).ready(function () {
           },
           message: {
             required: true,
-            minlength: 20
+            minlength: 10
           }
         },
         messages: {
           name: {
-            required: 'Vous avez bien un nom ?',
+            required: 'Vous avez bien un Prénom ?',
             minlength: 'Votre nom doit contenir au moins 2 caractères'
           },
           subject: {
-            required: 'euillez remplir ce champ',
+            required: 'Veuillez remplir ce champ',
             minlength: 'Ce champ contenir au moins 2 caractères'
           },
           email: {
