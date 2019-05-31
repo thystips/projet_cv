@@ -1,13 +1,22 @@
 <?php
-$serveur = 'localhost';
-$login = 'sql';
-$mot_de_passe = 'kq6h84_I';
-$base_de_donnees = 'antoinethys_';
-$charset = 'UTF8';
-$port = 3306;
+$host = 'localhost';
+$db   = 'antoinethys_';
+$user = 'sql';
+$pass = 'kq6h84_I';
+$charset = 'utf8';
 
+$options = [
+    \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+    \PDO::ATTR_EMULATE_PREPARES   => false,
+];
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 try {
-    $pdo = new PDO('mysql:host=' . $serveur . ';dbname=' . $base_de_donnees . ';charset=' . $charset . ';port=' . $port, $login, $mot_de_passe);
-} catch (PDOException $error) {
-    echo $error->getCode() . ' ' . $error->getMessage();
+    $pdo = new PDO($dsn, $user, $pass, $options);
+    // if ($dsn) {
+    //     echo "Connected to the <strong>$db</strong> database successfully!";
+    // }
+} catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+

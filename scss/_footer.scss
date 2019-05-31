@@ -1,9 +1,15 @@
 /* Footer area css
 ============================================================================================ */
-.footer_area{
-    
+.footer_area {
+    #footer-logo{
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
 }
-.footer_inner{
+}
+.footer_inner {
     text-align: center;
     background: rgba(0, 0, 0, .5);
     padding: 80px 0px 60px 0px;
@@ -18,55 +24,55 @@
                 background: #677fb5;
                 color: #fff;
             }
-            &:nth-child(2){
+            &:nth-child(2) {
                 a{
                     background: #70c2e9;
                     color: #fff;
                 }
             }
-            &:nth-child(3){
+            &:nth-child(3) {
                 a{
                     background: #895a4d;
                     color: #fff;
                 }
             }
-            &:nth-child(4){
+            &:nth-child(4) {
                 a{
                     background: #d34836;
                     color: #fff;
                 }
             }
-            &:nth-child(5){
+            &:nth-child(5) {
                 a{
                     background: #007ab9;
                     color: #fff;
                 }
             }
-            &:nth-child(6){
+            &:nth-child(6) {
                 a{
                     background: #d8545d;
                     color: #fff;
                 }
             }
-            &:nth-child(7){
+            &:nth-child(7) {
                 a{
                     background: #5ecbf3;
                     color: #fff;
                 }
             }
-            &:nth-child(8){
+            &:nth-child(8) {
                 a{
                     background: #ff3ba4;
                     color: #fff;
                 }
             }
-            &:nth-child(9){
+            &:nth-child(9) {
                 a{
                     background: #e299c2;
                     color: #fff;
                 }
             }
-            &:last-child{
+            &:last-child {
                 a{
                     background: #faaa5e;
                     color: #fff;
@@ -75,10 +81,10 @@
         }
     }
 }
-.footer_copyright{
+.footer_copyright {
     background: rgba(0, 0, 0, .7);
-    .pull-left{
-        h5{
+    .pull-left {
+        h5 {
             font-size: 13px;
             color: #fff;
             font-family: $ral;
@@ -89,11 +95,11 @@
             }
         }
     }
-    .pull-right{
-        .navbar-nav{
-            li{
+    .pull-right {
+        .navbar-nav {
+            li {
                 margin-right: 40px;
-                a{
+                a {
                     padding: 0px;
                     background: transparent;
                     line-height: 100px;
@@ -103,10 +109,10 @@
                     color: #fff;
                     @include transition;
                 }
-                &:last-child{
+                &:last-child {
                     margin-right: 0px;
                 }
-                &:hover, &.active{
+                &:hover, &.active {
                     a{
                         color: $baseColor;
                     }
