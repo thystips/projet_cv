@@ -1,29 +1,36 @@
 <?php
 require('db.php');
-$admin_sql = "SELECT * FROM admin";
-$comp_sql = "SELECT * FROM competences";
-$exp_sql = "SELECT * FROM experiences";
-$pro_sql = "SELECT * FROM projets";
-$users_sql = "SELECT * FROM users";
-$vars_sql = "SELECT * FROM vars";
-
-$admin_q = $pdo->Query($admin_sql);
-$comp_q = $pdo->Query($comp_sql);
-$exp_q = $pdo->Query($exp_sql);
-$pro_q = $pdo->Query($pro_sql);
-$users_q = $pdo->Query($users_sql);
-$vars_q = $pdo->Query($vars_sql);
-
-$admin = $admin_q->fetch();
-$comp = $comp_q->fetch();
-$exp = $exp_q->fetch();
-$pro = $pro_q->fetch();
-$users = $users_q->fetch();
-$vars = $vars_q->fetch();
+require_once('function.php');
 
 // var_dump($admin);
 // var_dump($comp);
 // var_dump($exp);
 // var_dump($pro);
-// var_dump($users);
+// var_dump($user);
 // var_dump($vars);
+
+// For hide something
+$disno = "Display:none;";
+
+// Age
+$age = Age($user['birth_date']);
+
+// Vars for echo
+$url = $vars['url'];
+$website_name = $vars['website_name'];
+$logo = $vars['logo'];
+$footer_logo = $vars['footer_logo'];
+
+$user_name = $user['name'];
+$work = $user['work'];
+$description = $user['description'];
+$nationality = $user['nationality'];
+$address = $user['Address'];
+$phone = $user['phone'];
+$email = $user['email'];
+$profile_pic = $user[ 'profile_pic'];
+
+$cat_comp1 = $vars['cat_comp1'];
+$cat_comp2 = $vars['cat_comp2'];
+$description_comp1 = $vars['description_comp1'];
+$description_comp2 = $vars['description_comp2'];
