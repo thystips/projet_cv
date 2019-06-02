@@ -28,9 +28,10 @@ $nationality = $user['nationality'];
 $address = $user['Address'];
 $phone = $user['phone'];
 $email = $user['email'];
-$profile_pic = $user[ 'profile_pic'];
+$profile_pic = $user['profile_pic'];
 
 $cat_comp1 = $vars['cat_comp1'];
 $cat_comp2 = $vars['cat_comp2'];
 $description_comp1 = $vars['description_comp1'];
 $description_comp2 = $vars['description_comp2'];
+$info_contact = $vars[ 'info_contact'];

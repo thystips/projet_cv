@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  sam. 01 juin 2019 à 21:56
+-- Généré le :  Dim 02 juin 2019 à 22:16
 -- Version du serveur :  10.4.5-MariaDB-1:10.4.5+maria~bionic-log
 -- Version de PHP :  7.3.6-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -80,6 +80,13 @@ CREATE TABLE `experiences` (
 -- RELATIONS POUR LA TABLE `experiences`:
 --
 
+--
+-- Déchargement des données de la table `experiences`
+--
+
+INSERT INTO `experiences` (`id`, `lettre`, `date`, `nom`, `Lieu`, `description`) VALUES
+(1, 'Y', '2018', 'Ynov Informatique', 'Bordeaux Ynov Campus', 'Etudiant à Ynov Informatique anciennement Ingesup visant à l\'obtention d\'un <a href=\"https://www.ynov.com/formation/ynov-masteres/expert-cloud-securite-reseaux/\"> Mastère Expert Cloud Sécurité & Infrastructure</a>.');
+
 -- --------------------------------------------------------
 
 --
@@ -92,6 +99,7 @@ CREATE TABLE `projets` (
   `Nom` text NOT NULL,
   `Description` varchar(255) NOT NULL,
   `Categorie` text NOT NULL,
+  `Lcat` char(2) NOT NULL,
   `Image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -163,7 +171,8 @@ CREATE TABLE `vars` (
   `cat_comp1` varchar(255) NOT NULL,
   `cat_comp2` varchar(255) NOT NULL,
   `description_comp1` varchar(255) NOT NULL,
-  `description_comp2` varchar(255) NOT NULL
+  `description_comp2` varchar(255) NOT NULL,
+  `info_contact` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -174,8 +183,8 @@ CREATE TABLE `vars` (
 -- Déchargement des données de la table `vars`
 --
 
-INSERT INTO `vars` (`id`, `logo`, `footer_logo`, `website_name`, `url`, `cat_comp1`, `cat_comp2`, `description_comp1`, `description_comp2`) VALUES
-(1, './img/logo.png', './img/footer-logo.png', 'Antoine THYS', 'antoinethys.com', 'Développement', 'Infrastructure & SI', 'Mes compétences en developpement logiciel et web.', 'Mes compétences en administration systèmes et réseaux.');
+INSERT INTO `vars` (`id`, `logo`, `footer_logo`, `website_name`, `url`, `cat_comp1`, `cat_comp2`, `description_comp1`, `description_comp2`, `info_contact`) VALUES
+(1, './img/logo.png', './img/footer-logo.png', 'Antoine THYS', 'antoinethys.com', 'Développement', 'Infrastructure & SI', 'Mes compétences en developpement logiciel et web.', 'Mes compétences en administration systèmes et réseaux.', '');
 
 --
 -- Index pour les tables déchargées
@@ -237,7 +246,7 @@ ALTER TABLE `competences`
 -- AUTO_INCREMENT pour la table `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `user`

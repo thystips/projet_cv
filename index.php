@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-
-<?php require('./php/vars.php');
-
-?>
+<?php require('./php/vars.php'); ?>
 <html lang="fr">
 
 <head>
@@ -104,7 +101,7 @@
                                     <li><a><?php echo $nationality ?></a></li>
                                     <li><a><?php echo $address ?></a></li>
                                     <li><a href="tel:+33640235596"><?php echo $phone ?></a></li>
-                                    <li><a href="mailto:<?php echo $email ?>?subject=email from <?php echo $url ?>"> <?php echo $email ?></a></li>
+                                    <li><a href="mailto:<?php echo $email ?>?subject=email from <?php echo $url ?>"><?php echo $email ?></a></li>
                                     <!-- <li><a href="#">antoine.thys@ynov.com</a></li> -->
                                     <li><a href="https://<?php echo $url ?>"><?php echo $url ?></a></li>
                                 </ul>
@@ -135,7 +132,8 @@
                             <p><?php echo $description_comp1 ?></p>
                         </div>
                         <div class="skill_item_inner">
-                            <div class="single_skill">
+
+                            <!-- <div class="single_skill">
                                 <h4>Python</h4>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
@@ -166,7 +164,7 @@
                                         <div class="progress_parcent">Débutant</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-md-6 wow fadeInUp animated">
@@ -175,7 +173,8 @@
                             <p><?php echo $description_comp2 ?></p>
                         </div>
                         <div class="skill_item_inner">
-                            <div class="single_skill">
+
+                            <!-- <div class="single_skill">
                                 <h4>Administration Windows / AD</h4>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
@@ -206,7 +205,7 @@
                                         <div class="progress_parcent">Intermédiaire</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -216,56 +215,17 @@
                     <h2>Parcours</h2>
                 </div>
                 <div class="education_inner_area">
-                    <div class="education_item wow fadeInUp animated" data-line="Y">
-                        <h6>2018</h6>
-                        <a href="#">
-                            <h4>Ynov Informatique</h4>
-                        </a>
-                        <h5>Bordeaux Ynov Campus</h5>
-                        <p>Etudiant à Ynov Informatique anciennement Ingesup visant à l'obtention d'un <a href="https://www.ynov.com/formation/ynov-masteres/expert-cloud-securite-reseaux/">
-                                Mastère Expert Cloud Sécurité & Infrastructure</a>.
-                        </p>
-                    </div>
-                    <div class="education_item wow fadeInUp animated" data-line="S">
-                        <h6>08 Janvier - 02 Février 2018 & 23 Avril - 19 Mai 2018</h6>
-                        <a href="#">
-                            <h4>Stage - SNCF Télécom</h4>
-                        </a>
-                        <h5>Bordeaux Gare St Jean</h5>
-                        <p>Stage effectué au service télécoms de la SNCF de Bordeaux.
-                            Mise en service d'un service de VOIP.
-                        </p>
-                    </div>
-                    <div class="education_item wow fadeInUp animated" data-line="S">
-                        <h6>23 Janvier - 17 Février 2017 & 06 Mars - 31 Mars 2017</h6>
-                        <a href="#">
-                            <h4>Stage - SNEF Connect</h4>
-                        </a>
-                        <h5>Agence SNEF de Mérignac</h5>
-                        <p>Stage effectué à l'agence SNEF de Mérignac dans le service SNEF Connect.
-                            Missions de préconfigurations de systèmes de vidéo protection pour le domaine public et
-                            privé.
-                        </p>
-                    </div>
-                    <div class="education_item wow fadeInUp animated" data-line="P">
-                        <h6>2016 - 2018</h6>
-                        <a href="#">
-                            <h4>Bac Pro SEN</h4>
-                        </a>
-                        <h5>Lycée Professionnel Charles Péguy</h5>
-                        <p>Première et Terminale Professionnelle SEN (Systèmes Electroniques Numériques)
-                            Obtention du Baccalauréat professionnel
-                            Systèmes électroniques numériques mention "Bien" en 2018.
-                        </p>
-                    </div>
-                    <div class="education_item wow fadeInUp animated" data-line="G">
-                        <h6>2014 - 2016</h6>
-                        <a href="#">
-                            <h4>Filière Générale</h4>
-                        </a>
-                        <h5>Lycée Assomption Ste Clotilde Bordeaux</h5>
-                        <p>Seconde Générale et Première Scientifique au Lycée Assomption Sainte Clotilde.</p>
-                    </div>
+                    <?php
+                    foreach ($experiences as $experiences) {
+                        echo '<div class="education_item wow fadeInUp animated" data-line="' . $experiences['lettre'] . '">';
+                        echo '    <h6>' . $experiences['date'] . '</h6>';
+                        echo '    <a href="#">';
+                        echo '        <h4>' . $experiences['nom'] . '</h4>';
+                        echo '    </a>';
+                        echo '    <h5>' . $experiences['Lieu'] . '</h5>';
+                        echo '    <p>' . $experiences['description'] . '</p>';
+                        echo '</div>';
+                    } ?>
                 </div>
             </section>
             <section class="portfolio_area pad" id="portfolio">
@@ -275,91 +235,28 @@
                 <div class="porfolio_menu">
                     <ul class="causes_filter">
                         <li class="active" data-filter="*"><a href="">All</a></li>
-                        <li data-filter=".SI"><a href="">Infra & SI</a></li>
-                        <li data-filter=".WEB"><a href="">Web</a></li>
-                        <li data-filter=".LOG"><a href="">Logiciel</a></li>
+                        <?php
+                        foreach ($competences_cat as $competences_cat) {
+                            echo '<li data-filter=".' . $competences_cat['Lcat'] . '"><a href="">' . $competences_cat['Categorie'] . '</a></li>';
+                        } ?>
                     </ul>
                 </div>
                 <div class="row">
                     <div class="portfolio_list_inner">
-                        <div class="col-md-4 photo SI">
-                            <div class="portfolio_item">
-                                <div class="portfolio_img">
-                                    <img src="img/portfolio/test.png" alt="">
-                                </div>
-                                <div class="portfolio_title">
-                                    <a href="#">
-                                        <h4>test</h4>
-                                    </a>
-                                    <h5>test</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 LOG">
-                            <div class="portfolio_item">
-                                <div class="portfolio_img">
-                                    <img src="img/portfolio/test.png" alt="Image Projet">
-                                </div>
-                                <div class="portfolio_title">
-                                    <a href="#">
-                                        <h4>test</h4>
-                                    </a>
-                                    <h5>test</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 WEB">
-                            <div class="portfolio_item">
-                                <div class="portfolio_img">
-                                    <img src="img/portfolio/test.png" alt="Image Projet">
-                                </div>
-                                <div class="portfolio_title">
-                                    <a href="#">
-                                        <h4>test</h4>
-                                    </a>
-                                    <h5>test</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 SI">
-                            <div class="portfolio_item">
-                                <div class="portfolio_img">
-                                    <img src="img/portfolio/test.png" alt="Image Projet">
-                                </div>
-                                <div class="portfolio_title">
-                                    <a href="#">
-                                        <h4>test</h4>
-                                    </a>
-                                    <h5>test</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 SI">
-                            <div class="portfolio_item">
-                                <div class="portfolio_img">
-                                    <img src="img/portfolio/test.png" alt="Image Projet">
-                                </div>
-                                <div class="portfolio_title">
-                                    <a href="#">
-                                        <h4>test</h4>
-                                    </a>
-                                    <h5>test</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 WEB">
-                            <div class="portfolio_item">
-                                <div class="portfolio_img">
-                                    <img src="img/portfolio/test.png" alt="Image Projet">
-                                </div>
-                                <div class="portfolio_title">
-                                    <a href="#">
-                                        <h4>test</h4>
-                                    </a>
-                                    <h5>test</h5>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        foreach ($projets as $projets) {
+                            echo '<div class="col-md-4 photo' . $projets['Lcat'] . '">';
+                            echo '    <div class="portfolio_item">';
+                            echo '        <div class="portfolio_img">';
+                            echo '            <img src="' . $projets['Image'] . '" alt="Image' . $projets['Nom'] . '">';
+                            echo '        </div>';
+                            echo '        <div class="portfolio_title">';
+                            echo '            <a href="#"><h4>' . $projets['Nom'] . '</h4></a>';
+                            echo '            <h5>' . $projets['Description'] . '</h5>';
+                            echo '        </div>';
+                            echo '    </div>';
+                            echo '</div>';
+                        } ?>
                     </div>
                 </div>
             </section>
@@ -374,19 +271,14 @@
                             <div class="contact_title">
                                 <h3>Informations de contact</h3>
                             </div>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the et majori
-                                have suffered alteration in some form, by injected humour, Domised words which don't
-                                look even slightly believable. If you are going to use a pas of Lorem Ipsum, you
-                                need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</p>
+                            <p><?php echo $info_contact ?></p>
                             <div class="media">
                                 <div class="media-left">
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="media-body">
                                     <h4>Adresse</h4>
-                                    <p>17 rue Pascal Triat, 33520 Bruges, France</p>
+                                    <p><?php echo $address ?></p>
                                 </div>
                             </div>
                             <div class="media">
@@ -395,7 +287,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>Téléphone</h4>
-                                    <p>+33 6 40 23 55 96</p>
+                                    <p><?php echo $phone ?></p>
                                 </div>
                             </div>
                             <div class="media">
@@ -404,7 +296,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>Adresses Email</h4>
-                                    <p>contact@antoinethys.com</p>
+                                    <p><?php echo $email ?></p>
                                     <!-- <p>antoine.thys@ynov.com</p> -->
                                 </div>
                             </div>
@@ -434,8 +326,7 @@
                                         <textarea class="form-control" rows="1" id="message" name="message" placeholder="Message*"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <button class="btn btn-default contact_btn" type="submit"><span>Envoyer le
-                                                Message</span></button>
+                                        <button class="btn btn-default contact_btn" type="submit"><span>Envoyer le Message</span></button>
                                     </div>
                                 </form>
                                 <div id="success">
@@ -486,14 +377,12 @@
                 <div class="pull-left">
                     <h5>
                         <!-- Licence -->
-                        <!-- <p>Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved</p> -->
                         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
                     </h5>
                 </div>
                 <div class="pull-left">
-                    <h5>
-                        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">antoinethys.com</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://antoinethys.com" property="cc:attributionName" rel="cc:attributionURL">Antoine THYS</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International</a>.
+                    <h5> <?php
+                            echo '<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"> ' . $url . ' </span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://' . $url . '" property="cc:attributionName" rel="cc:attributionURL"> ' . $user_name . ' </a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International</a>.' ?>
                     </h5>
                 </div>
             </div>

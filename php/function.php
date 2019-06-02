@@ -10,26 +10,43 @@ function age($date)
 }
 
 // SQL Query
-$admin_sql = "SELECT * FROM admin WHERE id = 1";
-$user_sql = "SELECT * FROM user WHERE id = 1";
-$vars_sql = "SELECT * FROM vars WHERE id = 1";
-$comp_sql = "SELECT * FROM competences";
-$exp_sql = "SELECT * FROM experiences";
-$pro_sql = "SELECT * FROM projets";
-$social_sql = "SELECT * FROM social";
+$sql = "SELECT * FROM admin WHERE id = 1";
+$query = $pdo->prepare($sql);
+$query->execute();
+$admin = $query->fetch();
 
-$admin_q = $pdo->Query($admin_sql);
-$user_q = $pdo->Query($user_sql);
-$vars_q = $pdo->Query($vars_sql);
-$comp_q = $pdo->Query($comp_sql);
-$exp_q = $pdo->Query($exp_sql);
-$pro_q = $pdo->Query($pro_sql);
-$social_q = $pdo->Query($social_sql);
 
-$admin = $admin_q->fetch();
-$user = $user_q->fetch();
-$vars = $vars_q->fetch();
-$comp = $comp_q->fetch();
-$exp = $exp_q->fetch();
-$pro = $pro_q->fetch();
-$social = $social_q->fetch();
+$sql = "SELECT * FROM user WHERE id = 1";
+$query = $pdo->prepare($sql);
+$query->execute();
+$user = $query->fetch();
+
+$sql = "SELECT * FROM vars WHERE id = 1";
+$query = $pdo->prepare($sql);
+$query->execute();
+$vars = $query->fetch();
+
+$sql = "SELECT * FROM social";
+$query = $pdo->prepare($sql);
+$query->execute();
+$social = $query->fetchAll();
+
+$sql = "SELECT * FROM competences";
+$query = $pdo->prepare($sql);
+$query->execute();
+$competences = $query->fetchAll();
+
+$sql = "SELECT * FROM experiences";
+$query = $pdo->prepare($sql);
+$query->execute();
+$experiences = $query->fetchAll();
+
+$sql = "SELECT * FROM projets";
+$query = $pdo->prepare($sql);
+$query->execute();
+$projets = $query->fetchAll();
+
+$sql = "SELECT DISTINCT Lcat, Categorie FROM projets";
+$query = $pdo->prepare($sql);
+$query->execute();
+$competences_cat = $query->fetchAll();
