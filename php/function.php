@@ -31,6 +31,11 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $social = $query->fetchAll();
 
+$sql = "SELECT * FROM social WHERE name IS NOT NULL";
+$query = $pdo->prepare($sql);
+$query->execute();
+$social_footer = $query->fetchAll();
+
 $sql = "SELECT * FROM competences WHERE Droite != 0";
 $query = $pdo->prepare($sql);
 $query->execute();

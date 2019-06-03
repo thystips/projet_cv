@@ -313,16 +313,9 @@
                 <img id="footer-logo" src="<?php echo $footer_logo ?>" alt="footer logo">
                 <!-- Social -->
                 <ul class="social_icon">
-                    <!-- Too personal -->
-                    <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <!-- Too personal -->
-                    <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <!-- Too personal -->
-                    <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-instagram"></i></a></li>
-
                     <?php
-                    foreach ($social as $social)
-                        echo '<li style=""><a href="https://' . $social['lien'] . '"><i class="fa fa-' . $social['name'] . '"></i></a></li>';
+                    foreach ($social_footer as $social_footer)
+                        echo '<li style=""><a href="https://' . $social_footer['lien'] . '"><i class="fa fa-' . $social_footer['name'] . '"></i></a></li>';
                     ?>
                 </ul>
             </div>
