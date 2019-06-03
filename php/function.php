@@ -26,15 +26,20 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $vars = $query->fetch();
 
-$sql = "SELECT * FROM social";
+$sql = "SELECT * FROM social WHERE name IS NOT NULL";
 $query = $pdo->prepare($sql);
 $query->execute();
 $social = $query->fetchAll();
 
-$sql = "SELECT * FROM competences";
+$sql = "SELECT * FROM competences WHERE Droite != 0";
 $query = $pdo->prepare($sql);
 $query->execute();
-$competences = $query->fetchAll();
+$competences_droite = $query->fetchAll();
+
+$sql = "SELECT * FROM competences WHERE Droite = 0";
+$query = $pdo->prepare($sql);
+$query->execute();
+$competences_gauche = $query->fetchAll();
 
 $sql = "SELECT * FROM experiences";
 $query = $pdo->prepare($sql);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 02 juin 2019 à 22:16
+-- Généré le :  lun. 03 juin 2019 à 18:31
 -- Version du serveur :  10.4.5-MariaDB-1:10.4.5+maria~bionic-log
 -- Version de PHP :  7.3.6-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -53,7 +53,8 @@ CREATE TABLE `competences` (
   `Nom` text NOT NULL,
   `Niveau` int(11) NOT NULL,
   `Pourcentage` int(11) NOT NULL,
-  `Categorie` varchar(255) NOT NULL
+  `Categorie` varchar(255) NOT NULL,
+  `Droite` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -116,13 +117,21 @@ CREATE TABLE `projets` (
 DROP TABLE IF EXISTS `social`;
 CREATE TABLE `social` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(255) NOT NULL,
+  `lien` varchar(255) NOT NULL,
+  `afficher` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- RELATIONS POUR LA TABLE `social`:
 --
+
+--
+-- Déchargement des données de la table `social`
+--
+
+INSERT INTO `social` (`id`, `name`, `lien`, `afficher`) VALUES
+(1, 'linkedin', 'www.linkedin.com/in/antoine-t-717403a9', 0);
 
 -- --------------------------------------------------------
 
@@ -215,6 +224,12 @@ ALTER TABLE `projets`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `social`
+--
+ALTER TABLE `social`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
@@ -246,6 +261,12 @@ ALTER TABLE `competences`
 -- AUTO_INCREMENT pour la table `experiences`
 --
 ALTER TABLE `experiences`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `social`
+--
+ALTER TABLE `social`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

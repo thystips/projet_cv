@@ -10,18 +10,18 @@
     <title><?php echo $website_name ?></title>
 
     <!-- Icon css link -->
-    <link href="vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendors/linears-icon/style.css" rel="stylesheet">
+    <link href="./vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./vendors/linears-icon/style.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Extra plugin css -->
-    <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
-    <link href="vendors/animate-css/animate.css" rel="stylesheet">
+    <link href="./vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="./vendors/animate-css/animate.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/responsive.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="css/colors/default.css" title="default">
         <link rel="alternate stylesheet" href="css/colors/orange.css" title="orange">
@@ -29,7 +29,7 @@
         <link rel="alternate stylesheet" href="css/colors/violet.css" title="violet">
         <link rel="alternate stylesheet" href="css/colors/blue.css" title="blue">
         <link rel="alternate stylesheet" href="css/colors/past.css" title="past"> -->
-    <link rel="stylesheet" href="css/colors/past.css">
+    <link rel="stylesheet" href="./css/colors/past.css">
 </head>
 
 <body class="dark_bg" data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="80" data-scroll-animation="true">
@@ -108,14 +108,10 @@
                             </div>
                             <!-- Social -->
                             <ul class="social_icon">
-                                <!-- Too personal -->
-                                <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <!-- Too personal -->
-                                <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <!-- Too personal -->
-                                <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-instagram"></i></a></li>
-
-                                <li style=""><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <?php
+                                foreach ($social as $social)
+                                    echo '<li style=""><a href="https://' . $social['lien'] . '"><i class="fa fa-' . $social['name'] . '"></i></a></li>';
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -133,38 +129,18 @@
                         </div>
                         <div class="skill_item_inner">
 
-                            <!-- <div class="single_skill">
-                                <h4>Python</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Intermédiaire</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_skill">
-                                <h4>C</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Débutant</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_skill">
-                                <h4>HTML/CSS/SASS</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Avancé</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_skill">
-                                <h4>JavaScript</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Débutant</div>
-                                    </div>
-                                </div>
-                            </div> -->
+                            <?php
+                            foreach ($competences_gauche as $competences_gauche) {
+                                echo '<div class="single_skill">';
+                                echo '    <h4>' . $competences_gauche['Nom'] . '</h4>';
+                                echo '    <div class="progress">';
+                                echo '        <div class="progress-bar" role="progressbar" aria-valuenow="' . $competences_gauche['Pourcentage'] . '" aria-valuemin="0" aria-valuemax="100">';
+                                echo '            <div class="progress_parcent">' . $competences_gauche['Niveau'] . '</div>';
+                                echo '        </div>';
+                                echo '    </div>';
+                                echo '</div>';
+                            } ?>
+
                         </div>
                     </div>
                     <div class="col-md-6 wow fadeInUp animated">
@@ -174,38 +150,18 @@
                         </div>
                         <div class="skill_item_inner">
 
-                            <!-- <div class="single_skill">
-                                <h4>Administration Windows / AD</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Avancé</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_skill">
-                                <h4>Administration Linux </h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Avancé</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_skill">
-                                <h4>Administration Réseau</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Intermédiaire</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single_skill">
-                                <h4>Cisco</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress_parcent">Intermédiaire</div>
-                                    </div>
-                                </div>
-                            </div> -->
+                            <?php
+                            foreach ($competences_droite as $competences_droite) {
+                                echo '<div class="single_skill">';
+                                echo '    <h4>' . $competences_droite['Nom'] . '</h4>';
+                                echo '    <div class="progress">';
+                                echo '        <div class="progress-bar" role="progressbar" aria-valuenow="' . $competences_droite['Pourcentage'] . '" aria-valuemin="0" aria-valuemax="100">';
+                                echo '            <div class="progress_parcent">' . $competences_droite['Niveau'] . '</div>';
+                                echo '        </div>';
+                                echo '    </div>';
+                                echo '</div>';
+                            } ?>
+
                         </div>
                     </div>
                 </div>
@@ -228,6 +184,7 @@
                     } ?>
                 </div>
             </section>
+
             <section class="portfolio_area pad" id="portfolio">
                 <div class="main_title">
                     <h2>Portfolio</h2>
@@ -243,6 +200,7 @@
                 </div>
                 <div class="row">
                     <div class="portfolio_list_inner">
+
                         <?php
                         foreach ($projets as $projets) {
                             echo '<div class="col-md-4 photo' . $projets['Lcat'] . '">';
@@ -257,9 +215,11 @@
                             echo '    </div>';
                             echo '</div>';
                         } ?>
+
                     </div>
                 </div>
             </section>
+
             <section class="contact_area pad" id="contact">
                 <div class="main_title">
                     <h2>Me contacter</h2>
@@ -302,6 +262,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <!-- ContactForm -->
                         <div class="contact_from_area wow fadeInUp animated">
@@ -309,7 +270,7 @@
                                 <h3>Envoyer un message:</h3>
                             </div>
                             <div class="row">
-                                <form action="contact_process.php" method="post" id="contactForm">
+                                <form action="./php/contact_process.php" method="post" id="contactForm">
                                     <div class="form-group col-md-12">
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Prénom*">
                                     </div>
@@ -359,7 +320,10 @@
                     <!-- Too personal -->
                     <li style="<?php echo $disno; ?>"><a href="#"><i class="fa fa-instagram"></i></a></li>
 
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <?php
+                    foreach ($social as $social)
+                        echo '<li style=""><a href="https://' . $social['lien'] . '"><i class="fa fa-' . $social['name'] . '"></i></a></li>';
+                    ?>
                 </ul>
             </div>
         </div>
@@ -391,26 +355,29 @@
     <!--================End footer Area =================-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <!-- Extra plugin js -->
-    <script src="vendors/counter-up/waypoints.min.js"></script>
-    <script src="vendors/counter-up/jquery.counterup.min.js"></script>
-    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="vendors/isotope/isotope.pkgd.min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="./vendors/counter-up/waypoints.min.js"></script>
+    <script src="./vendors/counter-up/jquery.counterup.min.js"></script>
+    <script src="./vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="./vendors/isotope/isotope.pkgd.min.js"></script>
+    <script src="./vendors/owl-carousel/owl.carousel.min.js"></script>
 
-    <script src="vendors/style-switcher/styleswitcher.js"></script>
-    <script src="vendors/style-switcher/switcher-active.js"></script>
-    <script src="vendors/animate-css/wow.min.js"></script>
+    <script src="./vendors/style-switcher/styleswitcher.js"></script>
+    <script src="./vendors/style-switcher/switcher-active.js"></script>
+    <script src="./vendors/animate-css/wow.min.js"></script>
 
     <!-- contact js -->
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="./js/jquery.form.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/contact.js"></script>
 
-    <script src="js/theme.js"></script>
+    <script src="./js/theme.js"></script>
+
+    <!-- For dev -->
+    <script src="./js/holder.min.js"></script>
 </body>
 
 </html>

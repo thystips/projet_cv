@@ -1,9 +1,9 @@
 reminder.md
-LICENCE.md
-README.md
 CV.code-workspace
 /hidden/
 *~
 .vscode/
 /admin
 /.vscode
+.idea/workspace.xml
+.idea
