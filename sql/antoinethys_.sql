@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 03 juin 2019 à 18:31
+-- Généré le :  mar. 04 juin 2019 à 08:50
 -- Version du serveur :  10.4.5-MariaDB-1:10.4.5+maria~bionic-log
 -- Version de PHP :  7.3.6-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -37,10 +37,6 @@ CREATE TABLE `admin` (
   `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
---
--- RELATIONS POUR LA TABLE `admin`:
---
-
 -- --------------------------------------------------------
 
 --
@@ -57,10 +53,6 @@ CREATE TABLE `competences` (
   `Droite` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- RELATIONS POUR LA TABLE `competences`:
---
-
 -- --------------------------------------------------------
 
 --
@@ -76,10 +68,6 @@ CREATE TABLE `experiences` (
   `Lieu` text NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- RELATIONS POUR LA TABLE `experiences`:
---
 
 --
 -- Déchargement des données de la table `experiences`
@@ -104,10 +92,6 @@ CREATE TABLE `projets` (
   `Image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- RELATIONS POUR LA TABLE `projets`:
---
-
 -- --------------------------------------------------------
 
 --
@@ -121,10 +105,6 @@ CREATE TABLE `social` (
   `lien` varchar(255) NOT NULL,
   `afficher` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
---
--- RELATIONS POUR LA TABLE `social`:
---
 
 --
 -- Déchargement des données de la table `social`
@@ -154,10 +134,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
--- RELATIONS POUR LA TABLE `user`:
---
-
---
 -- Déchargement des données de la table `user`
 --
 
@@ -183,10 +159,6 @@ CREATE TABLE `vars` (
   `description_comp2` varchar(255) NOT NULL,
   `info_contact` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- RELATIONS POUR LA TABLE `vars`:
---
 
 --
 -- Déchargement des données de la table `vars`
