@@ -202,7 +202,7 @@
 
                             <?php
                         foreach ($projets as $projets) {
-                            echo '<div class="col-md-4 photo' . $projets['Lcat'] . '">';
+                            echo '<div class="col-md-4 photo .' . $projets['Lcat'] . '">';
                             echo '    <div class="portfolio_item">';
                             echo '        <div class="portfolio_img">';
                             echo '            <img src="' . $projets['Image'] . '" alt="Image' . $projets['Nom'] . '">';
