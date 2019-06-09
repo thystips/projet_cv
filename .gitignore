@@ -3,8 +3,8 @@ CV.code-workspace
 /hidden/
 *~
 .vscode/
-/admin
 /.vscode
 .idea/workspace.xml
 .idea
 /.idea
+/admin/blbla.sql

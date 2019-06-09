@@ -1,5 +1,5 @@
 <?php
-// Calculate l'âge from birth date aaaa-mm-jj
+// Age from birth date aaaa-mm-jj
 function age($date)
 {
     $age = date('Y') - date('Y', strtotime($date));
@@ -13,18 +13,18 @@ function age($date)
 $sql = "SELECT * FROM admin WHERE id = 1";
 $query = $pdo->prepare($sql);
 $query->execute();
-$admin = $query->fetch();
+$admin = $query->fetch(PDO::FETCH_ASSOC);
 
 
 $sql = "SELECT * FROM user WHERE id = 1";
 $query = $pdo->prepare($sql);
 $query->execute();
-$user = $query->fetch();
+$user = $query->fetch(PDO::FETCH_ASSOC);
 
 $sql = "SELECT * FROM vars WHERE id = 1";
 $query = $pdo->prepare($sql);
 $query->execute();
-$vars = $query->fetch();
+$vars = $query->fetch(PDO::FETCH_ASSOC);
 
 $sql = "SELECT * FROM social WHERE name IS NOT NULL";
 $query = $pdo->prepare($sql);

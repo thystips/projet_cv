@@ -1,5 +1,5 @@
 <?php
-require('db.php');
+require_once('db.php');
 require_once('function.php');
 
 // For display:none
@@ -10,6 +10,7 @@ $url = $vars['url'];
 $website_name = $vars['website_name'];
 $logo = $vars['logo'];
 $footer_logo = $vars['footer_logo'];
+$fav_icon = $vars['fav-icon'];
 
 $age = Age($user['birth_date']);
 $user_name = $user['name'];
