@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="<?php echo $fav_icon ?>" type="image/x-icon" />
-        <title><?php echo $website_name ?></title>
+        <link rel="icon" href="<?= $fav_icon ?>" type="image/x-icon" />
+        <title><?= $website_name ?></title>
 
         <!-- Icon css link -->
         <link href="./vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
@@ -48,11 +48,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html"><img id="navbar_brand-logo" src="<?php echo $logo ?>"
+                        <a class="navbar-brand" href="index.html"><img id="navbar_brand-logo" src="<?= $logo ?>"
                                 alt="Logo" title="Logo"></a>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="active"><a href="#about">à propos de moi</a></li>
@@ -61,7 +60,7 @@
                             <li><a href="#portfolio">portfolio</a></li>
                             <li><a href="#contact">contact</a></li>
                         </ul>
-                    </div><!-- /.navbar-collapse -->
+                    </div>
                 </nav>
             </div>
         </header>
@@ -74,15 +73,15 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="person_img">
-                                <img src="<?php echo $profile_pic ?>" alt="Owner's Picture" title="Owner's Picture">
+                                <img src="<?= $profile_pic ?>" alt="Owner's Picture" title="Owner's Picture">
                                 <!-- <a class="download_btn" href="#"><span>Télécharger mon CV</span></a> -->
                             </div>
                         </div>
                         <div class="col-md-7">
                             <div class="row person_details">
-                                <h3>Je suis <span><?php echo $user_name ?></span></h3>
-                                <h4><?php echo $work ?></h4>
-                                <p><?php echo $description ?></p>
+                                <h3>Je suis <span><?= $user_name ?></span></h3>
+                                <h4><?= $work ?></h4>
+                                <p><?= $description ?></p>
                                 <div class="person_information">
                                     <ul>
                                         <li><a>Age</a></li>
@@ -94,93 +93,96 @@
                                         <li><a>Site Web</a></li>
                                     </ul>
                                     <ul>
-                                        <li><a><?php echo $age ?></a></li>
-                                        <li><a><?php echo $nationality ?></a></li>
-                                        <li><a><?php echo $address ?></a></li>
-                                        <li><a href="tel:+33640235596"><?php echo $phone ?></a></li>
+                                        <li><a><?= $age ?></a></li>
+                                        <li><a><?= $nationality ?></a></li>
+                                        <li><a><?= $address ?></a></li>
+                                        <li><a href="tel:+33640235596"><?= $phone ?></a></li>
                                         <li><a
-                                                href="mailto:<?php echo $email ?>?subject=email from <?php echo $url ?>"><?php echo $email ?></a>
+                                                href="mailto:<?= $email ?>?subject=email from <?= $url ?>"><?= $email ?></a>
                                         </li>
                                         <!-- <li><a href="#">antoine.thys@ynov.com</a></li> -->
-                                        <li><a href="https://<?php echo $url ?>"><?php echo $url ?></a></li>
+                                        <li><a href="https://<?= $url ?>"><?= $url ?></a></li>
                                     </ul>
                                 </div>
                                 <!-- Social -->
                                 <ul class="social_icon">
-                                    <?php
-                                foreach ($social as $social)
-                                    echo '<li style=""><a href="https://' . $social['lien'] . '"><i class="fa fa-' . $social['name'] . '"></i></a></li>';
-                                ?>
+                                    <?php foreach ($social as $social) : ?>
+                                    <li style="">
+                                        <a href="https://<?= $social['lien'] ?>"><i
+                                                class="fa fa-<?= $social['name'] ?>"></i></a>
+                                    </li> <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="myskill_area pad" id="skill">
+                <section class=" myskill_area pad" id="skill">
                     <div class="main_title">
                         <h2>Mes compétences</h2>
                     </div>
                     <div class="row">
                         <div class="col-md-6 wow fadeInUp animated">
                             <div class="skill_text">
-                                <h4><?php echo $cat_comp1 ?></h4>
-                                <p><?php echo $description_comp1 ?></p>
+                                <h4><?= $cat_comp1 ?></h4>
+                                <p><?= $description_comp1 ?></p>
                             </div>
                             <div class="skill_item_inner">
 
-                                <?php
-                            foreach ($competences_gauche as $competences_gauche) {
-                                echo '<div class="single_skill">';
-                                echo '    <h4>' . $competences_gauche['Nom'] . '</h4>';
-                                echo '    <div class="progress">';
-                                echo '        <div class="progress-bar" role="progressbar" aria-valuenow="' . $competences_gauche['Pourcentage'] . '" aria-valuemin="0" aria-valuemax="100">';
-                                echo '            <div class="progress_parcent">' . $competences_gauche['Niveau'] . '</div>';
-                                echo '        </div>';
-                                echo '    </div>';
-                                echo '</div>';
-                            } ?>
+                                <?php foreach ($competences_gauche as $competences_gauche) : ?>
+                                <div class="single_skill">
+                                    <h4><?= $competences_gauche['Nom'] ?></h4>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            aria-valuenow="<?= $competences_gauche['Pourcentage'] ?>" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress_parcent"><?= $competences_gauche['Niveau'] ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endforeach; ?>
 
                             </div>
                         </div>
-                        <div class="col-md-6 wow fadeInUp animated">
+                        <div class=" col-md-6 wow fadeInUp animated">
                             <div class="skill_text">
-                                <h4><?php echo $cat_comp2 ?></h4>
-                                <p><?php echo $description_comp2 ?></p>
+                                <h4><?= $cat_comp2 ?></h4>
+                                <p><?= $description_comp2 ?></p>
                             </div>
                             <div class="skill_item_inner">
 
-                                <?php
-                            foreach ($competences_droite as $competences_droite) {
-                                echo '<div class="single_skill">';
-                                echo '    <h4>' . $competences_droite['Nom'] . '</h4>';
-                                echo '    <div class="progress">';
-                                echo '        <div class="progress-bar" role="progressbar" aria-valuenow="' . $competences_droite['Pourcentage'] . '" aria-valuemin="0" aria-valuemax="100">';
-                                echo '            <div class="progress_parcent">' . $competences_droite['Niveau'] . '</div>';
-                                echo '        </div>';
-                                echo '    </div>';
-                                echo '</div>';
-                            } ?>
+                                <?php foreach ($competences_droite as $competences_droite) : ?>
+                                <div class="single_skill">
+                                    <h4><?= $competences_droite['Nom'] ?></h4>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            aria-valuenow="<?= $competences_droite['Pourcentage'] ?>" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress_parcent"><?= $competences_droite['Niveau'] ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endforeach; ?>
 
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="education_area pad" id="education">
+                <section class=" education_area pad" id="education">
                     <div class="main_title">
                         <h2>Parcours</h2>
                     </div>
                     <div class="education_inner_area">
-                        <?php
-                    foreach ($experiences as $experiences) {
-                        echo '<div class="education_item wow fadeInUp animated" data-line="' . $experiences['lettre'] . '">';
-                        echo '    <h6>' . $experiences['date'] . '</h6>';
-                        echo '    <a href="#">';
-                        echo '        <h4>' . $experiences['nom'] . '</h4>';
-                        echo '    </a>';
-                        echo '    <h5>' . $experiences['Lieu'] . '</h5>';
-                        echo '    <p>' . $experiences['description'] . '</p>';
-                        echo '</div>';
-                    } ?>
+                        <?php foreach ($experiences as $experiences) : ?>
+                        <div class="education_item wow fadeInUp animated" data-line="<?= $experiences['lettre'] ?>">
+                            <h6><?= $experiences['date'] ?></h6>
+                            <a href=" #">
+                                <h4><?= $experiences['nom'] ?></h4>
+                            </a>
+                            <h5><?= $experiences['Lieu'] ?></h5>
+                            <p><?= $experiences['description'] ?></p>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </section>
 
@@ -191,35 +193,34 @@
                     <div class="porfolio_menu">
                         <ul class="causes_filter">
                             <li class="active" data-filter="*"><a href="">All</a></li>
-                            <?php
-                        foreach ($competences_cat as $competences_cat) {
-                            echo '<li data-filter=".' . $competences_cat['Lcat'] . '"><a href="">' . $competences_cat['Categorie'] . '</a></li>';
-                        } ?>
+                            <?php foreach ($projets_cat as $projets_cat) : ?>
+                            <li data-filter=".<?= $projets_cat['Lcat'] ?>"><a
+                                    href=""><?= $projets_cat['Categorie'] ?></a></li>
+                            <?php endforeach ?>
                         </ul>
                     </div>
-                    <div class="row">
+                    <div class=" row">
                         <div class="portfolio_list_inner">
-
-                            <?php
-                        foreach ($projets as $projets) {
-                            echo '<div class="col-md-4 photo .' . $projets['Lcat'] . '">';
-                            echo '    <div class="portfolio_item">';
-                            echo '        <div class="portfolio_img">';
-                            echo '            <img src="' . $projets['Image'] . '" alt="Image' . $projets['Nom'] . '">';
-                            echo '        </div>';
-                            echo '        <div class="portfolio_title">';
-                            echo '            <a href="#"><h4>' . $projets['Nom'] . '</h4></a>';
-                            echo '            <h5>' . $projets['Description'] . '</h5>';
-                            echo '        </div>';
-                            echo '    </div>';
-                            echo '</div>';
-                        } ?>
-
+                            <?php foreach ($projets as $projets) : ?>
+                            <div class="col-md-4 photo .<?= $projets['Lcat'] ?>">
+                                <div class="portfolio_item">
+                                    <div class="portfolio_img">
+                                        <img src="<?= $projets['Image'] ?>" alt="Image<?= $projets['Nom'] ?>">
+                                    </div>
+                                    <div class="portfolio_title">
+                                        <a href="">
+                                            <h4><?= $projets['Nom'] ?></h4>
+                                        </a>
+                                        <h5><?= $projets['Description'] ?></h5>';
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </section>
 
-                <section class="contact_area pad" id="contact">
+                <section class=" contact_area pad" id="contact">
                     <div class="main_title">
                         <h2>Me contacter</h2>
                     </div>
@@ -230,14 +231,14 @@
                                 <div class="contact_title">
                                     <h3>Informations de contact</h3>
                                 </div>
-                                <p><?php echo $info_contact ?></p>
+                                <p><?= $info_contact ?></p>
                                 <div class="media">
                                     <div class="media-left">
                                         <i class="fa fa-map-marker"></i>
                                     </div>
                                     <div class="media-body">
                                         <h4>Adresse</h4>
-                                        <p><?php echo $address ?></p>
+                                        <p><?= $address ?></p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -246,7 +247,7 @@
                                     </div>
                                     <div class="media-body">
                                         <h4>Téléphone</h4>
-                                        <p><?php echo $phone ?></p>
+                                        <p><?= $phone ?></p>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -255,7 +256,7 @@
                                     </div>
                                     <div class="media-body">
                                         <h4>Adresses Email</h4>
-                                        <p><?php echo $email ?></p>
+                                        <p><?= $email ?></p>
                                         <!-- <p>antoine.thys@ynov.com</p> -->
                                     </div>
                                 </div>
@@ -299,7 +300,9 @@
                                         <p>Votre message a été envoyé avec succès.</p>
                                     </div>
                                     <div id="error">
-                                        <p>Désolé un problème est survenu ! Votre message n'a pas été envoyé.</p>
+                                        <p>Désolé un problème est survenu ! Votre message n'a pas
+                                            été
+                                            envoyé.</p>
                                     </div>
                                 </div>
                             </div>
@@ -315,13 +318,13 @@
         <footer class="footer_area">
             <div class="footer_inner">
                 <div class="container">
-                    <img id="footer-logo" src="<?php echo $footer_logo ?>" alt="footer logo">
+                    <img id="footer-logo" src="<?= $footer_logo ?>" alt="footer logo">
                     <!-- Social -->
                     <ul class="social_icon">
-                        <?php
-                    foreach ($social_footer as $social_footer)
-                        echo '<li style=""><a href="https://' . $social_footer['lien'] . '"><i class="fa fa-' . $social_footer['name'] . '"></i></a></li>';
-                    ?>
+                        <?php foreach ($social as $social) : ?>
+                        <li style="">
+                            <a href="https://<?= $social['lien'] ?>"><i class="fa fa-<?= $social['name'] ?>"></i></a>
+                        </li> <?php endforeach; ?>
                     </ul>
                 </div>
             </div>

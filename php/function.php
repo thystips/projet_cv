@@ -59,4 +59,4 @@ $projets = $query->fetchAll();
 $sql = "SELECT DISTINCT Lcat, Categorie FROM projets";
 $query = $pdo->prepare($sql);
 $query->execute();
-$competences_cat = $query->fetchAll();
+$projets_cat = $query->fetchAll();
