@@ -1,1 +1,5 @@
-options -indexes
+Options -Indexes
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "./admin/.htpasswd"
+Require valid-user
