@@ -21,6 +21,7 @@ $address = $user['Address'];
 $phone = $user['phone'];
 $email = $user['email'];
 $profile_pic = $user['profile_pic'];
+$lien_cv = $user['lien_cv'];
 
 $cat_comp1 = $vars['cat_comp1'];
 $cat_comp2 = $vars['cat_comp2'];

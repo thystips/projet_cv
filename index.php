@@ -74,7 +74,7 @@
                         <div class="col-md-5">
                             <div class="person_img">
                                 <img src="<?= $profile_pic ?>" alt="Owner's Picture" title="Owner's Picture">
-                                <!-- <a class="download_btn" href="#"><span>Télécharger mon CV</span></a> -->
+                                <a class="download_btn" href="<?= $lien_cv ?>"><span>Télécharger mon CV</span></a>
                             </div>
                         </div>
                         <div class="col-md-7">
@@ -89,7 +89,6 @@
                                         <li><a>Adresse</a></li>
                                         <li><a>Téléphone</a></li>
                                         <li><a>Email</a></li>
-                                        <!-- <li><a>Email étudiante</a></li> -->
                                         <li><a>Site Web</a></li>
                                     </ul>
                                     <ul>
@@ -100,7 +99,6 @@
                                         <li><a
                                                 href="mailto:<?= $email ?>?subject=email from <?= $url ?>"><?= $email ?></a>
                                         </li>
-                                        <!-- <li><a href="#">antoine.thys@ynov.com</a></li> -->
                                         <li><a href="https://<?= $url ?>"><?= $url ?></a></li>
                                     </ul>
                                 </div>

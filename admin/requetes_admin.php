@@ -7,6 +7,7 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $competences = $query->fetchAll();
 
+//UPDATE
 // User
 if (isset($_POST['Uuser'])) {
     $sql = "UPDATE user SET name = ?, work = ?, description = ?, profile_pic = ?, email = ?, Address = ?, phone = ?, nationality = ? , birth_date = ? WHERE id = 1";
@@ -53,7 +54,7 @@ if (isset($_POST['Ucompetences'])) {
     ];
     $sql = "UPDATE competences SET id = :id, Nom = :Nom, Niveau = :Niveau, Pourcentage = :Pourcentage, Droite = :Droite  WHERE id = :id";
     $query = $pdo->prepare($sql);
-    $$query->execute($array);
+    $query->execute($array);
 };
 
 // Expériences
@@ -68,7 +69,7 @@ if (isset($_POST['Uexperiences'])) {
     ];
     $sql = "UPDATE experiences SET lettre = :lettre, date = :date, nom = :nom, Lieu = :Lieu, description = :description  WHERE id = :id";
     $query = $pdo->prepare($sql);
-    $$query->execute($array);
+    $query->execute($array);
 };
 
 // Projet
@@ -83,7 +84,7 @@ if (isset($_POST['Uprojets'])) {
     ];
     $sql = "UPDATE projets SET Nom = :Nom, Description = :Description, Categorie = :Categorie, Lcat = :Lcat, Image = :Image  WHERE id = :id";
     $query = $pdo->prepare($sql);
-    $$query->execute($array);
+    $query->execute($array);
 };
 
 //Social
@@ -95,5 +96,106 @@ if (isset($_POST['Usocial'])) {
     ];
     $sql = "UPDATE projets SET name = :name, lien = :lien  WHERE id = :id";
     $query = $pdo->prepare($sql);
-    $$query->execute($array);
+    $query->execute($array);
 };
+
+//CREATE
+// Add Compétence
+if (isset($_POST['Acompetences'])) {
+    $new_competence = array(
+        "Nom"         => $_POST['Nom'],
+        "Niveau"      => $_POST['Niveau'],
+        "Pourcentage" => $_POST['Pourcentage'],
+        "Droite"      => $_POST['Droite']
+    );
+    $sql = sprintf(
+        "INSERT INTO %s (%s) values (%s)",
+        "competences",
+        implode(", ", array_keys($new_competence)),
+        ":" . implode(", :", array_keys($new_competence))
+    );
+    $query = $pdo->prepare($sql);
+    $query->execute($new_competence);
+};
+
+// Add Experience
+if (isset($_POST['Aexperiences'])) {
+    $new_experience = array(
+        "lettre"       => $_POST['lettre'],
+        "date"         => $_POST['date'],
+        "nom"          => $_POST['nom'],
+        "Lieu"         => $_POST['Lieu'],
+        "description"  => $_POST['description']
+    );
+    $sql = sprintf(
+        "INSERT INTO %s (%s) values (%s)",
+        "experiences",
+        implode(", ", array_keys($new_experience)),
+        ":" . implode(", :", array_keys($new_experience))
+    );
+    $query = $pdo->prepare($sql);
+    $query->execute($new_experience);
+};
+
+//Add Projet
+if (isset($_POST['Aprojets'])) {
+    $new_projet = array(
+        "Nom"          => $_POST['Nom'],
+        "Description"  => $_POST['Description'],
+        "Categorie"    => $_POST['Categorie'],
+        "Lcat"         => $_POST['Lcat'],
+        "Image"        => $_POST['Image']
+    );
+    $sql = sprintf(
+        "INSERT INTO %s (%s) values (%s)",
+        "projets",
+        implode(", ", array_keys($new_projet)),
+        ":" . implode(", :", array_keys($new_projet))
+    );
+    $query = $pdo->prepare($sql);
+    $query->execute($new_projet);
+};
+
+// Add Social
+if (isset($_POST['Asocial'])) {
+    $new_social = array(
+        "name"      => $_POST['name'],
+        "lien"      => $_POST['lien']
+    );
+    $sql = sprintf(
+        "INSERT INTO %s (%s) values (%s)",
+        "social",
+        implode(", ", array_keys($new_social)),
+        ":" . implode(", :", array_keys($new_social))
+    );
+    $query = $pdo->prepare($sql);
+    $query->execute($new_social);
+};
+
+//DELETE
+foreach ($_POST as $key => $value) {
+    if (explode('-', $key)[0] == 'Dcompetences') {
+        $query = $pdo->prepare("DELETE FROM competences WHERE id = ?");
+        $query->execute([
+            explode('-', $key)[1]
+        ]);
+    }
+    if (explode('-', $key)[0] == 'Dexperiences') {
+        $query = $pdo->prepare("DELETE FROM experiences WHERE id = ?");
+        $query->execute([
+            explode('-', $key)[1]
+        ]);
+    }
+    if (explode('-', $key)[0] == 'Dprojets') {
+        $query = $pdo->prepare("DELETE FROM projets WHERE id = ?");
+        $query->execute([
+            explode('-', $key)[1]
+        ]);
+    }
+    if (explode('-', $key)[0] == 'Dsocial') {
+        $query = $pdo->prepare("DELETE FROM social WHERE id = ?");
+        $query->execute([
+            explode('-', $key)[1]
+        ]);
+    }
+}
