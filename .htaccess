@@ -1,5 +1,5 @@
 Options -Indexes
 AuthName "Page d'administration protégée"
 AuthType Basic
-AuthUserFile "./admin/.htpasswd"
+AuthUserFile "../autre/.htpasswd"
 Require valid-user
