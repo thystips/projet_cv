@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 17 juin 2019 à 00:17
+-- Généré le :  lun. 17 juin 2019 à 23:59
 -- Version du serveur :  10.3.12-MariaDB
 -- Version de PHP :  7.2.14
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `competences` (
   `Pourcentage` int(11) NOT NULL,
   `Droite` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `competences`
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `experiences` (
   `Lieu` text NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `experiences`
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `projets` (
   `Lcat` char(3) NOT NULL,
   `Image` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `projets`
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `social` (
   `name` varchar(255) NOT NULL,
   `lien` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- Déchargement des données de la table `social`
@@ -169,6 +169,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `phone` varchar(255) NOT NULL,
   `nationality` varchar(255) NOT NULL,
   `birth_date` date NOT NULL,
+  `lien_cv` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
@@ -176,8 +177,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `work`, `description`, `profile_pic`, `email`, `Address`, `phone`, `nationality`, `birth_date`) VALUES
-(1, 'Antoine THYS', 'Étudiant Ynov Informatique', 'Je m\'appelle Antoine THYS. Je suis actuellement étudiant Ynov Infomatique sur le campus de Bordeaux. Lorem ipsum dolor sit amet, consectetur ascing elits, sed do eiusmod tempor incidunt ut labore et dolore mafgna aliqua. Ut enim ad mini vniam quis nerci, tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis autes irure dolor in reprehenderit in etrs voluptate velit esse cillum dolore eu fugiat nulla pariatur. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ceci est un cv demandé dans le cadre d\'un projet obligatoire.', './img/pdp.png', 'contact@antoinethys.com', '17 rue Pascal Triat, 33520 Bruges, FR', '+33 6 40 23 55 96', 'Français / Belge', '1999-07-16');
+INSERT INTO `user` (`id`, `name`, `work`, `description`, `profile_pic`, `email`, `Address`, `phone`, `nationality`, `birth_date`, `lien_cv`) VALUES
+(1, 'Antoine THYS', 'Étudiant Ynov Informatique (INGESUP)', 'Je m\'appelle Antoine THYS. Je suis actuellement étudiant Ynov Infomatique sur le campus de Bordeaux. Lorem ipsum dolor sit amet, consectetur ascing elits, sed do eiusmod tempor incidunt ut labore et dolore mafgna aliqua. Ut enim ad mini vniam quis nerci, tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis autes irure dolor in reprehenderit in etrs voluptate velit esse cillum dolore eu fugiat nulla pariatur. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ceci est un cv demandé dans le cadre d\'un projet obligatoire.', './img/pdp.png', 'contact@antoinethys.com', '17 rue Pascal Triat, 33520 Bruges, FR', '+33 6 40 23 55 96', 'Français / Belge', '1999-07-16', '#');
 
 -- --------------------------------------------------------
 
