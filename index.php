@@ -104,11 +104,12 @@
                                 </div>
                                 <!-- Social -->
                                 <ul class="social_icon">
-                                    <?php foreach ($social as $social) : ?>
+                                    <?php foreach ($social as $social_footer) : ?>
                                     <li style="">
-                                        <a href="https://<?= $social['lien'] ?>"><i
-                                                class="fa fa-<?= $social['name'] ?>"></i></a>
-                                    </li> <?php endforeach; ?>
+                                        <a href="https://<?= $social_footer['lien'] ?>"><i
+                                                class="fa fa-<?= $social_footer['name'] ?>"></i></a>
+                                    </li>
+                                    <?php endforeach ?>
                                 </ul>
                             </div>
                         </div>
@@ -322,7 +323,8 @@
                         <?php foreach ($social as $social) : ?>
                         <li style="">
                             <a href="https://<?= $social['lien'] ?>"><i class="fa fa-<?= $social['name'] ?>"></i></a>
-                        </li> <?php endforeach; ?>
+                        </li>
+                        <?php endforeach ?>
                     </ul>
                 </div>
             </div>
