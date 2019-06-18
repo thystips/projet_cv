@@ -185,8 +185,8 @@
                 <button class="btn btn-danger" type="submit"
                     name="Dcompetences-<?= $competences['id'] ?>">Supprimer</button>
             </form>
-            <?php endforeach; ?>
             <br>
+            <?php endforeach; ?>
 
             <form action="admin.php" method="post">
                 <button class="btn btn-primary" type="submit" name="ADDcompetences">Ajouter</button>
@@ -307,7 +307,7 @@
                 <button class="btn btn-danger" type="submit"
                     name="Dcompetences-<?= $projets['id'] ?>">Supprimer</button>
             </form>
-
+            <br>
             <?php endforeach; ?>
             <?php } ?>
             <br>
@@ -357,6 +357,7 @@
                 <button class="btn btn-primary" type="submit" name="Msocial">Modifier</button>
                 <button class="btn btn-danger" type="submit" name="Dcompetences-<?= $social['id'] ?>">Supprimer</button>
             </form>
+            <br>
             <?php endforeach; ?>
             <?php } ?>
             <br>
