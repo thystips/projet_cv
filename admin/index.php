@@ -1,9 +1,15 @@
 <?php
 session_start();
 require_once('../php/vars.php');
-if (isset($_POST['connect']) && !isset($_SESSION['connected'])) {
-    if ($_POST['email'] == $admin['email'] && $_POST['password'] == $admin['password']) {
-        $_SESSION['connected'] = true;
+if (isset($_POST['connect'])) {
+    if (isset($_POST['connect']) && !isset($_SESSION['connected'])) {
+        $password = md5($_POST['password']) . sha1($_POST['password']) . md5($_POST['password']);
+        if ($_POST['email'] == $admin['email'] && $password == $admin['password']) {
+            $_SESSION['connected'] = true;
+            header('Location: admin.php');
+        } else {
+            echo 'Erreur de mot de passe !';
+        }
     }
 }
 if (isset($_POST['disconnect'])) {
@@ -27,7 +33,7 @@ if (isset($_SESSION['connected'])) {
 
     <body>
         <h1>Connexion</h1>
-        <form class="w-50 mx-auto m-2" action="admin.php" method="post">
+        <form class="w-50 mx-auto m-2" action="" method="post">
             <input class="form-control mb-2" type="text" placeholder="email" name="email" />
             <input class="form-control mb-2" type="password" placeholder="Mot de passe" name="password" />
             <button class="btn btn-primary mx-auto d-block" type="submit" name="connect">Connexion</button>
