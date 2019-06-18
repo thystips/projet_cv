@@ -102,21 +102,49 @@
 
             <h3><?= $competences['Nom'] ?></h3>
             <form action="admin.php" method="post">
-                <?php foreach ($competences as $key => $value) {
-                        if ($key != 'Droite') { ?>
+                <?php foreach ($competences as $key => $value) :
+                        if ($key != 'Droite' && $key != 'Pourcentage' && $key != 'id') { ?>
                 <label><?= $key ?> : </label><input class="form-control my-1" type="text" name="<?= $key ?>"
                     value="<?= $value ?>" id="<?= $key ?>" />
-                <?php } else if ($key == 'Droite') { ?> <label>La compétence doit être dans la colonne de :</label>
-                <input class="form-control my-1 " type="radio" name="<?= $key ?>" value="0"
-                    id="<?= $key ?>" /><?= $cat_comp1 ?>
-                <input class=" form-control my-1 " type=" radio" name="<?= $key ?>" value="1"
-                    id="<?= $key ?>" /><?= $cat_comp2 ?><br>
+
+                <?php } else if ($key == 'Droite') { ?>
+                <label>La compétence doit être dans la colonne de :</label>
+                <?php if ($competences['Droite'] == '0') { ?>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="<?= $key ?>" id="<?= $key ?>" value="0" checked>
+                    <label class="form-check-label">
+                        <?= $cat_comp1 ?>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="<?= $key ?>" id="<?= $key ?>" value="1">
+                    <label class="form-check-label">
+                        <?= $cat_comp2 ?>
+                    </label>
+                </div>
+                <?php } else if ($competences['Droite'] == '1') { ?>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="<?= $key ?>" id="<?= $key ?>" value="0">
+                    <label class="form-check-label">
+                        <?= $cat_comp1 ?>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="<?= $key ?>" id="<?= $key ?>" value="1" checked>
+                    <label class="form-check-label">
+                        <?= $cat_comp2 ?>
+                    </label>
+                </div>
+                <?php } ?>
+
                 <?php } else if ($key == 'Pourcentage') { ?>
                 <label><?= $key ?> : </label><input class="form-control my-1" type="number" name="<?= $key ?>"
                     value="<?= $value ?>" id="<?= $key ?>" />
+
                 <?php } else if ($key == 'id') { ?>
-                <input type="hidden" value="<?= $value; ?>" name="id" /> <?php }
-                                                                            } ?>
+                <input type="hidden" value="<?= $value; ?>" name="id" />
+                <?php };
+                endforeach ?>
                 <button class="btn btn-success" type="submit" name="Ucompetences">Sauvegarder</button>
             </form>
 
@@ -288,17 +316,17 @@
         <section class="border-top p-5">
             <?php if (isset($_POST['Msocial'])) { ?>
             <?php foreach ($social as $social) : ?>
-            <?php foreach ($social as $key => $value) : ?>
 
             <form action="admin.php" method="post">
+                <?php foreach ($social as $key => $value) : ?>
                 <?php if ($key != 'id') : ?>
                 <label><?= $key ?> : </label><input class="form-control my-1" type="text" name="<?= $key ?>"
                     value="<?= $value ?>" id="<?= $key ?>" /> <br>
                 <?php endif ?>
+                <?php endforeach ?>
                 <button class="btn btn-success" type="submit" name="Usocial">Sauvegarder</button>
             </form>
 
-            <?php endforeach ?>
             <?php endforeach ?>
             <?php } else if (isset($_POST['ADDsocial'])) { ?>
 

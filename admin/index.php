@@ -11,7 +11,7 @@ if (isset($_POST['disconnect'])) {
     session_destroy();
 }
 if (isset($_SESSION['connected'])) {
-    require_once('admin.php.php');
+    require_once('admin.php');
 } else { ?>
 <!doctype html>
 <html lang="fr">
