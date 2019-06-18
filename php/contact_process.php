@@ -1,6 +1,6 @@
 <?php
-
-$to = "cv@antoinethys.com";
+include_once('vars.php');
+$to = $email;
 $from = $_REQUEST['email'];
 $name = $_REQUEST['name'];
 $subject = $_REQUEST['subject'];
@@ -12,10 +12,10 @@ $headers .= "Reply-To: " . $from . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-$subject = "Vous avez un message venant de votre cv";
+$subject = "Vous avez un message venant de " . $url;
 
-$logo = './img/logo.png';
-$link = 'antoinethys.com';
+$logo = $logo;
+$link = $url;
 
 $body = "<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><title>antoinethys.com Mail</title></head><body>";
 $body .= "<table style='width: 100%;'>";
