@@ -201,7 +201,7 @@
                     <div class=" row">
                         <div class="portfolio_list_inner">
                             <?php foreach ($projets as $projets) : ?>
-                            <div class="col-md-4 photo .<?= $projets['Lcat'] ?>">
+                            <div class="col-md-4 photo <?= $projets['Lcat'] ?>">
                                 <div class="portfolio_item">
                                     <div class="portfolio_img">
                                         <img src="<?= $projets['Image'] ?>" alt="Image<?= $projets['Nom'] ?>">
