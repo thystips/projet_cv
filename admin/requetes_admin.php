@@ -80,9 +80,10 @@ if (isset($_POST['Uprojets'])) {
         "Description"  =>  $_POST['Description'],
         "Categorie"    =>  $_POST['Categorie'],
         "Lcat"         =>  $_POST['Lcat'],
-        "Image"        =>  $_POST['Image']
+        "Image"        =>  $_POST['Image'],
+        "Lien_projet"  =>  $_POST['Lien_projet']
     ];
-    $sql = "UPDATE projets SET Nom = :Nom, Description = :Description, Categorie = :Categorie, Lcat = :Lcat, Image = :Image  WHERE id = :id";
+    $sql = "UPDATE projets SET Nom = :Nom, Description = :Description, Categorie = :Categorie, Lcat = :Lcat, Image = :Image, Lien_projet = :Lien_projet  WHERE id = :id";
     $query = $pdo->prepare($sql);
     $query->execute($array);
 };
@@ -144,7 +145,8 @@ if (isset($_POST['Aprojets'])) {
         "Description"  => $_POST['Description'],
         "Categorie"    => $_POST['Categorie'],
         "Lcat"         => $_POST['Lcat'],
-        "Image"        => $_POST['Image']
+        "Image"        => $_POST['Image'],
+        "Lien_projet"  => $_POST['Lien_projet']
     );
     $sql = sprintf(
         "INSERT INTO %s (%s) values (%s)",

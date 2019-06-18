@@ -204,10 +204,11 @@
                             <div class="col-md-4 photo <?= $projets['Lcat'] ?>">
                                 <div class="portfolio_item">
                                     <div class="portfolio_img">
-                                        <img src="<?= $projets['Image'] ?>" alt="Image<?= $projets['Nom'] ?>">
+                                        <a href="<?= $projets['Lien_projet'] ?>" title="<?= $projets['Nom'] ?>"><img
+                                                src="<?= $projets['Image'] ?>" alt="Image-<?= $projets['Nom'] ?>"></a>
                                     </div>
                                     <div class="portfolio_title">
-                                        <a href="">
+                                        <a href="<?= $projets['Lien_projet'] ?>">
                                             <h4><?= $projets['Nom'] ?></h4>
                                         </a>
                                         <h5><?= $projets['Description'] ?></h5>';

@@ -262,26 +262,31 @@
             <?php if (isset($_POST['Mprojets'])) { ?>
             <?php foreach ($projets as $projets) : ?>
             <h3> <?= $projets['Nom'] ?> </h3>
-            <?php foreach ($projets as $key => $value) : ?>
             <form action="admin.php" method="post">
+                <?php foreach ($projets as $key => $value) : ?>
                 <?php if ($key != 'id') { ?>
                 <label><?= $key ?> : </label><input class="form-control my-1" type="text" name="<?= $key ?>"
                     value="<?= $value ?>" id="<?= $key ?>" /> <br>
                 <?php } else if ($key == 'id') { ?>
                 <input type="hidden" value="<?= $value; ?>" name="id" /> <?php } ?>
+                <?php endforeach; ?>
                 <button class="btn btn-success" type="submit" name="Uprojets">Sauvegarder</button>
             </form>
-            <?php endforeach; ?>
             <?php endforeach; ?>
             <?php } else if (isset($_POST['ADDprojets'])) { ?>
 
             <form action="admin.php" method="post">
-                <label>Lettre : </label><input class="form-control my-1" type="text" name="lettre" id="lettre" />
-                <label>Date : </label><input class="form-control my-1" type="date" name="date" id="date" />
-                <label>Nom : </label><input class="form-control my-1" type="text" name="nom" id="nom" />
-                <label>Lieu : </label><input class="form-control my-1" type="text" name="Lieu" id="Lieu" />
-                <label>Description : </label><textarea class="form-control my-1" name="description"
-                    id="description" /></textarea>
+                <label>Nom : </label><input class="form-control my-1" type="text" name="Nom" id="Nom" />
+                <label>Description : </label><textarea class="form-control my-1" name="Description"
+                    id="Description" /></textarea>
+                <label>Categorie : </label><input class="form-control my-1" type="text" name="Categorie"
+                    id="Categorie" />
+                <label>Diminutif de la catégorie (max 3 lettres) :</label><input class="form-control my-1" type="text"
+                    name="Lcat" id="Lcat" />
+                <label>Lien vers l'image : </label><input class="form-control my-1" type="text" name="Image"
+                    id="Image" />
+                <label>URL vers le projet (optionnel) : </label><input class="form-control my-1" type="text"
+                    name="Lien_projet" id="Lien_projet" />
                 <button class="btn btn-success" type="submit" name="Aprojets">Ajouter</button>
             </form>
 
@@ -292,7 +297,7 @@
                         if ($key != 'id' && $key != 'Image') { ?>
                 <li><span class="font-weight-bold"><?= $key ?> : </span><?= $value ?></li> <br>
                 <?php } else if ($key == 'Image') { ?>
-                <li><img src="../<?= $value ?>" alt="Image_<?= $value ?>"></li>
+                <li><img style="width: 315px; height: 280px;" src="../<?= $value ?>" alt="Image_<?= $value ?>"></li>
                 <?php }
                 endforeach; ?>
             </ul>

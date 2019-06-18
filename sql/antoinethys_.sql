@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 18 juin 2019 à 16:41
+-- Généré le :  mar. 18 juin 2019 à 23:37
 -- Version du serveur :  10.3.12-MariaDB
 -- Version de PHP :  7.2.14
 
@@ -89,25 +89,26 @@ INSERT INTO `experiences` (`id`, `lettre`, `date`, `nom`, `Lieu`, `description`)
 DROP TABLE IF EXISTS `projets`;
 CREATE TABLE IF NOT EXISTS `projets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Nom` text NOT NULL,
-  `Description` varchar(255) NOT NULL,
-  `Categorie` text NOT NULL,
+  `Nom` varchar(255) NOT NULL,
+  `Description` text NOT NULL,
+  `Categorie` varchar(255) NOT NULL,
   `Lcat` char(3) NOT NULL,
   `Image` text NOT NULL,
+  `Lien_projet` text NOT NULL DEFAULT '#',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `projets`
 --
 
-INSERT INTO `projets` (`id`, `Nom`, `Description`, `Categorie`, `Lcat`, `Image`) VALUES
-(1, 'Test 1', 'Test 1', 'Infra / SI', 'SI', 'img/portfolio/test.png'),
-(2, 'Test 2', 'Test 2', 'Web', 'WEB', 'img/portfolio/test.png'),
-(3, 'Test 3', 'Test 3', 'Logiciel', 'LOG', 'img/portfolio/test.png'),
-(4, 'Test 4', 'Test 4', 'Infra / SI', 'SI', 'img/portfolio/test.png'),
-(5, 'Test 5', 'Test 5', 'Web', 'WEB', 'img/portfolio/test.png'),
-(6, 'Test 6', 'Test 6', 'Infra / SI', 'SI', 'img/portfolio/test.png');
+INSERT INTO `projets` (`id`, `Nom`, `Description`, `Categorie`, `Lcat`, `Image`, `Lien_projet`) VALUES
+(1, 'Infrastructure OSPF', 'Mise en place d\'une infrastructure OSPF virtuelle.', 'Infra / SI', 'SI', 'img/portfolio/tp_infra.png', 'https://github.com/antoine33520/CCNA/blob/master/TP_6.md'),
+(2, 'Pong Game', 'Réalisation d\'un jeu d\'arcade type Pong en Python3', 'Logiciel', 'LOG', 'img/portfolio/pong.svg', 'https://github.com/antoine33520/pong'),
+(3, 'Site Web CV', 'Création d\'un CV sous forme de site internet avec une page d\'administration.', 'Web', 'WEB', 'img/portfolio/test.png', 'https://github.com/antoine33520/projet_cv'),
+(4, 'Projet Plante Connectée', 'Projet Plante Connectée avec Raspberry Pi et Arduino', 'Logiciel', 'LOG', 'img/portfolio/raspberry-pi.svg', 'https://github.com/antoine33520/projet_plante'),
+(5, 'Projet Réseau', 'Mise en place d\'une solution de routage et de VPN opensource avec Pfsense', 'Infra / SI', 'SI', 'img/portfolio/pfsense.jpg', 'https://github.com/antoine33520/projet_infra'),
+(6, 'Ansible / Proxmox', 'Déploiement et provisionnement de VMs sur proxmox avec Ansible', 'Infra / SI', 'SI', 'img/portfolio/Ansible_logo.svg', '');
 
 -- --------------------------------------------------------
 
