@@ -12,7 +12,7 @@ $headers .= "Reply-To: " . $from . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-$subject = "Vous avez un message venant de antoinethys.com";
+$subject = "Vous avez un message venant de votre cv";
 
 $logo = './img/logo.png';
 $link = 'antoinethys.com';
