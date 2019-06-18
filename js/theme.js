@@ -1,4 +1,5 @@
-; (function ($) {
+;
+(function ($) {
   'use strict'
 
   /* ----------------------------------------------------
@@ -6,7 +7,8 @@
   ---------------------------------------------------- */
 
   var NavOffsetTop = $('.header_area').offset().top
-  function stickyHeader () {
+
+  function stickyHeader() {
     if ($('.header_area').length) {
       var strickyScrollPos = NavOffsetTop
       if ($(window).scrollTop() > strickyScrollPos) {
@@ -43,7 +45,7 @@
   /* ----------------------------------------------------
                   portfolio_isotope
   ---------------------------------------------------- */
-  function OurGallery () {
+  function OurGallery() {
     if ($('.portfolio_area').length) {
       // Activate isotope in container
       $('.portfolio_list_inner').imagesLoaded(function () {
@@ -99,6 +101,8 @@
   $(window).load(function () { // makes sure the whole site is loaded
     $('#preloader_spinner').fadeOut() // will first fade out the loading animation
     $('#preloader').delay(150).fadeOut('slow') // will fade out the white DIV that covers the website.
-    $('body').delay(150).css({ 'overflow': 'visible' })
+    $('body').delay(150).css({
+      'overflow': 'visible'
+    })
   })
 })(jQuery)

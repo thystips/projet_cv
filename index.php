@@ -357,27 +357,28 @@
         </footer>
         <!--================End footer Area =================-->
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery -->
         <script src="./js/jquery-2.1.4.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="./js/bootstrap.min.js"></script>
+
         <!-- Extra plugin js -->
         <script src="./vendors/counter-up/waypoints.min.js"></script>
         <script src="./vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="./vendors/isotope/imagesloaded.pkgd.min.js"></script>
         <script src="./vendors/isotope/isotope.pkgd.min.js"></script>
         <script src="./vendors/owl-carousel/owl.carousel.min.js"></script>
-
         <script src="./vendors/style-switcher/styleswitcher.js"></script>
         <script src="./vendors/style-switcher/switcher-active.js"></script>
         <script src="./vendors/animate-css/wow.min.js"></script>
+
+        <!-- Scroll and Progress -->
+        <script src="./js/theme.js"></script>
 
         <!-- contact js -->
         <script src="./js/jquery.form.js"></script>
         <script src="./js/jquery.validate.min.js"></script>
         <script src="./js/contact.js"></script>
-
-        <script src="./js/theme.js"></script>
 
         <!-- For dev -->
         <script src="./js/holder.min.js"></script>

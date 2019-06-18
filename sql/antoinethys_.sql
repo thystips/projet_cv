@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 17 juin 2019 à 23:59
+-- Généré le :  mar. 18 juin 2019 à 16:41
 -- Version du serveur :  10.3.12-MariaDB
 -- Version de PHP :  7.2.14
 
@@ -21,27 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `antoinethys_`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `admin`
---
-
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
---
--- Déchargement des données de la table `admin`
---
-
-INSERT INTO `admin` (`id`, `email`, `password`) VALUES
-(1, 'contact@antoinethys.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -178,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `work`, `description`, `profile_pic`, `email`, `Address`, `phone`, `nationality`, `birth_date`, `lien_cv`) VALUES
-(1, 'Antoine THYS', 'Étudiant Ynov Informatique (INGESUP)', 'Je m\'appelle Antoine THYS. Je suis actuellement étudiant Ynov Infomatique sur le campus de Bordeaux. Lorem ipsum dolor sit amet, consectetur ascing elits, sed do eiusmod tempor incidunt ut labore et dolore mafgna aliqua. Ut enim ad mini vniam quis nerci, tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis autes irure dolor in reprehenderit in etrs voluptate velit esse cillum dolore eu fugiat nulla pariatur. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ceci est un cv demandé dans le cadre d\'un projet obligatoire.', './img/pdp.png', 'contact@antoinethys.com', '17 rue Pascal Triat, 33520 Bruges, FR', '+33 6 40 23 55 96', 'Français / Belge', '1999-07-16', '#');
+(1, 'Antoine THYS', 'Étudiant Ynov Informatique (INGESUP)', 'Je m\'appelle Antoine THYS. Je suis actuellement étudiant Ynov Infomatique sur le campus de Bordeaux. Lorem ipsum dolor sit amet, consectetur ascing elits, sed do eiusmod tempor incidunt ut labore et dolore mafgna aliqua. Ut enim ad mini vniam quis nerci, tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis autes irure dolor in reprehenderit in etrs voluptate velit esse cillum dolore eu fugiat nulla pariatur. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ceci est un cv demandé dans le cadre d\'un projet obligatoire.', './img/pdp.png', 'contact@antoinethys.com', '17 rue Pascal Triat, 33520 Bruges, FR', '+33 6 40 23 55 96', 'Français / Belge', '1999-07-16', './documents/cv_antoine_thys.pdf');
 
 -- --------------------------------------------------------
 
