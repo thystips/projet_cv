@@ -95,9 +95,9 @@
                                         <li><a><?= $age ?></a></li>
                                         <li><a><?= $nationality ?></a></li>
                                         <li><a><?= $address ?></a></li>
-                                        <li><a href="tel:+33640235596"><?= $phone ?></a></li>
-                                        <li><a
-                                                href="mailto:<?= $email ?>?subject=email from <?= $url ?>"><?= $email ?></a>
+                                        <li><a href="tel:<?= $phone ?>"><?= $phone ?></a></li>
+                                        <li><a href=" mailto:<?= $email ?>?subject=email from
+                                                <?= $url ?>"><?= $email ?></a>
                                         </li>
                                         <li><a href="https://<?= $url ?>"><?= $url ?></a></li>
                                     </ul>
