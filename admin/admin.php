@@ -324,10 +324,11 @@
 
             <form action="admin.php" method="post">
                 <?php foreach ($social as $key => $value) : ?>
-                <?php if ($key != 'id') : ?>
+                <?php if ($key != 'id') { ?>
                 <label><?= $key ?> : </label><input class="form-control my-1" type="text" name="<?= $key ?>"
                     value="<?= $value ?>" id="<?= $key ?>" /> <br>
-                <?php endif ?>
+                <?php } else if ($key == 'id') { ?>
+                <input type="hidden" value="<?= $value; ?>" name="id" /> <?php } ?>
                 <?php endforeach ?>
                 <button class="btn btn-success" type="submit" name="Usocial">Sauvegarder</button>
             </form>

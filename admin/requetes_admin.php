@@ -91,11 +91,11 @@ if (isset($_POST['Uprojets'])) {
 //Social
 if (isset($_POST['Usocial'])) {
     $array = [
-        "id"           =>  $_POST['id'],
-        "Nom"          =>  $_POST['name'],
-        "Description"  =>  $_POST['lien']
+        "id"    =>  $_POST['id'],
+        "name"  =>  $_POST['name'],
+        "lien"  =>  $_POST['lien']
     ];
-    $sql = "UPDATE projets SET name = :name, lien = :lien  WHERE id = :id";
+    $sql = "UPDATE social SET name = :name, lien = :lien  WHERE id = :id";
     $query = $pdo->prepare($sql);
     $query->execute($array);
 };
