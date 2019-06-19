@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /MCD/
+Disallow: /scss/
+Disallow: /sql/
+Disallow: /documents/
