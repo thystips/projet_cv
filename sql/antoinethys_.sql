@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 18 juin 2019 à 23:59
+-- Généré le :  mer. 19 juin 2019 à 11:13
 -- Version du serveur :  10.3.12-MariaDB
 -- Version de PHP :  7.2.14
 
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `social` (
 
 INSERT INTO `social` (`id`, `name`, `lien`) VALUES
 (1, 'linkedin', 'www.linkedin.com/in/antoine-t-717403a9'),
-(4, 'github', 'https://github.com/antoine33520');
+(4, 'github', 'github.com/antoine33520');
 
 -- --------------------------------------------------------
 

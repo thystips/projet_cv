@@ -60,12 +60,12 @@ if (isset($_POST['Ucompetences'])) {
 // Expériences
 if (isset($_POST['Uexperiences'])) {
     $array = [
-        "id"           =>  $_POST['id'],
-        "lettre"       =>  $_POST['lettre'],
-        "date"         =>  $_POST['date'],
-        "nom"          =>  $_POST['nom'],
-        "Lieu"         =>  $_POST['Lieu'],
-        "description"  =>  $_POST['description']
+        "id"            =>  $_POST['id'],
+        "lettre"        =>  $_POST['lettre'],
+        "date"          =>  $_POST['date'],
+        "nom"           =>  $_POST['nom'],
+        "Lieu"          =>  $_POST['Lieu'],
+        "description"   =>  $_POST['description']
     ];
     $sql = "UPDATE experiences SET lettre = :lettre, date = :date, nom = :nom, Lieu = :Lieu, description = :description  WHERE id = :id";
     $query = $pdo->prepare($sql);
