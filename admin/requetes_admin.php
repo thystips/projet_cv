@@ -93,7 +93,7 @@ if (isset($_POST['Usocial'])) {
     $array = [
         "id"           =>  $_POST['id'],
         "Nom"          =>  $_POST['name'],
-        "Description"  =>  $_POST['lien'],
+        "Description"  =>  $_POST['lien']
     ];
     $sql = "UPDATE projets SET name = :name, lien = :lien  WHERE id = :id";
     $query = $pdo->prepare($sql);

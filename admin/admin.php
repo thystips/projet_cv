@@ -355,7 +355,7 @@
 
             <form action="admin.php" method="post">
                 <button class="btn btn-primary" type="submit" name="Msocial">Modifier</button>
-                <button class="btn btn-danger" type="submit" name="Dcompetences-<?= $social['id'] ?>">Supprimer</button>
+                <button class="btn btn-danger" type="submit" name="Dsocial-<?= $social['id'] ?>">Supprimer</button>
             </form>
             <br>
             <?php endforeach; ?>
