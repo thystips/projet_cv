@@ -1,6 +1,6 @@
 <?php
 include_once('vars.php');
-$to = $email;
+$to = "antoine.thys@ynov.com";
 $from = $_REQUEST['email'];
 $name = $_REQUEST['name'];
 $subject = $_REQUEST['subject'];
