@@ -1,0 +1,26 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoine33520/projet_cv.git"
+  },
+  "keywords": [
+    "cv"
+  ],
+  "author": "Antoine Thys",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/antoine33520/projet_cv/issues"
+  },
+  "homepage": "https://github.com/antoine33520/projet_cv#readme",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
